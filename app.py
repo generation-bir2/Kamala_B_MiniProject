@@ -1,4 +1,7 @@
 import sys
+import os
+def clear():
+    os.system( 'cls' )
 #products =[]
 # def product():
 #     file=open("product.txt","r")
@@ -32,6 +35,7 @@ while True:
         sys.exit(0) 
                 
     elif value == 1:
+        clear()
         print('''
               0. To return to Main menu.
               1.List Product.
@@ -50,6 +54,7 @@ while True:
                 product_lines=file.readlines()
                 for line in product_lines:
                     print([line.rstrip()])
+                    
             elif value ==2:
                 item=input("Enter your new item:- ")   
                 with open('product.txt', 'a+') as file:
@@ -91,6 +96,7 @@ while True:
                     print(line)
                     
             elif value==3:
+                print("ok")
                 # replace_item= int(input("Item index to replace(0 |1 |2 |3 |4 ) :" ))
                 # item_to_replace = input("Item to replace: ")
                 # product[replace_item]=item_to_replace
