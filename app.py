@@ -21,24 +21,24 @@ def main_menu():
                 0.Save and Exit
                 1.For Product
                 2. For Couriers
-                 ''')
+                ''')
 main_menu() 
- 
+
 
 while True:
     value = (int(input('''Select a option 0:Save and Exit |1 : Show the product items: ''')))
-             
+
     if value == 0:
         sys.exit(0) 
                 
     elif value == 1:
         print('''
-              0. To return to Main menu.
-              1.List Product.
-              2.Create New Product.
-              3.Update/ Replace product.
-              4.Delete Product.
-             ''')
+            0. To return to Main menu.
+            1.List Product.
+            2.Create New Product.
+            3.Update/ Replace product.
+            4.Delete Product.
+            ''')
         while True:
             value = (int(input("Select a option 0 |1 |2 |3 |4 : ")))
             if value==0:
@@ -72,12 +72,12 @@ while True:
   
     elif value==2:
         print('''
-              0. To return to Main menu.
-              1.List Couriers.
-              2.Create New Couriers.
-              3.Update/ Replace Couriers.
-              4.Delete Couriers.
-             ''')
+            0. To return to Main menu.
+            1.List Couriers.
+            2.Create New Couriers.
+            3.Update/ Replace Couriers.
+            4.Delete Couriers.
+            ''')
         while True:
             value = (int(input("Select a option 0 |1 |2 |3 |4 : ")))
             if value==0:
@@ -99,9 +99,7 @@ while True:
                 
             
             
-  
         
-                   
     # else:
     #     print("INVALID OPTION")
     #     print(" ")
