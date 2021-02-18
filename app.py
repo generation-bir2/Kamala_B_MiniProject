@@ -1,35 +1,29 @@
 import sys
 import os
+import csv
+
+
+product = []      
+courier = []
+order=[]
+
 def clear():
     os.system( 'cls' )
-#products =[]
-# def product():
-#     file=open("product.txt","r")
-#     product_lines=file.readlines()
-#     for line in product_lines:
-#         print([line.rstrip()])
-        
-# product()   
-
-# # def couriers():
-# #     file=open("couriers.txt","r")
-# #     couriers_lines=file.readlines()
-# #     for line in couriers_lines:
-# #         print(line)
-# # couriers()    
-
+    
+    #Main menu 
 def main_menu():
+    clear()
     print("Welcome to the CAfee!".center(125,  " "))
     print('''
                 0.Save and Exit
                 1.For Product
                 2. For Couriers
+                3.For Orders
                  ''')
-main_menu() 
- 
+    
 
 while True:
-    value = (int(input('''Select a option 0:Save and Exit |1 : Show the product items: ''')))
+    value = int(input('''Select a option 0:Save and Exit |1 : Show the product items: '''))
              
     if value == 0:
         sys.exit(0) 
@@ -37,6 +31,7 @@ while True:
     elif value == 1:
         clear()
         print('''
+                                                    Welcome to Product menu                                      
               0. To return to Main menu.
               1.List Product.
               2.Create New Product.
@@ -44,39 +39,36 @@ while True:
               4.Delete Product.
              ''')
         while True:
-            value = (int(input("Select a option 0 |1 |2 |3 |4 : ")))
+            value = int(input("Select a option 0 |1 |2 |3 |4 : "))
             if value==0:
                 main_menu()
                 break  
             
             if value==1:
-                file=open("product.txt","r")
-                product_lines=file.readlines()
-                for line in product_lines:
-                    print([line.rstrip()])
-                    
+                print("displaying product")
+               
+            
             elif value ==2:
-                item=input("Enter your new item:- ")   
-                with open('product.txt', 'a+') as file:
-                    file.write(item +'\n')
-                
+               print("adding product")    
+                                    
+                        
             elif value==3:
-                replace_item= int(input("Item index to replace(0 |1 |2 |3 |4 ) :" ))
-                item_to_replace = input("Item to replace: ")
-                product[replace_item]=item_to_replace
-                print(product)
+                print("updating product")
+                
+                
                 
             elif value==4:
-                print(products) 
-                to_delete =int(input("select item index to delete(0 |1 |2 |3 |4 ): "))
-                products.pop(to_delete)
-                print(products)
-                
+               print("deleting product")
+                    
+                        
             else:
-                print("Thats look good to me")
-  
+                print("Invalid option.Please select option from 0-4")
+                
     elif value==2:
+        clear()
         print('''
+                                                        Welcome to Courier menu
+                                                        
               0. To return to Main menu.
               1.List Couriers.
               2.Create New Couriers.
@@ -90,25 +82,63 @@ while True:
                 break   
             
             elif value==1:
-                file=open("couriers.txt","r")
-                couriers_lines=file.readlines()
-                for line in couriers_lines:
-                    print(line)
-                    
+                print("displaying couriers")
+                
+                
+            elif value==2:
+                 print("adding couriers")
+                
+                
+                
+                                   
             elif value==3:
-                print("ok")
-                # replace_item= int(input("Item index to replace(0 |1 |2 |3 |4 ) :" ))
-                # item_to_replace = input("Item to replace: ")
-                # product[replace_item]=item_to_replace
-                # print(courier)
+                print("updating couriers")
+               
+            elif value ==4:             
+               print("deleting couriers")
                 
-                
+            else:
+                print("Invalid option Select option 0-4")    
             
-            
-  
+    elif value==3:
+        clear()
+        print('''
+                                                        Welcome to order menu
+                                                        
+              0. To return to Main menu.
+              1.List Orders.
+              2.Create New Order.
+              3.Update/ Replace Order.
+              4.Delete order.
+             ''')
         
-                   
-    # else:
-    #     print("INVALID OPTION")
-    #     print(" ")
-    #     print('*************************THANK YOU***************************')
+        while True:
+            value =int(input("Select a option 0 |1 |2 |3 |4 : "))
+            if value==0:
+                main_menu()
+                break   
+            
+            elif value==1:
+                print("displaying orders")
+              
+                        
+            elif value==2:
+                print("adding orders")
+                
+            elif value ==3:
+                print("updating orders")
+                    
+            elif value==4:
+               print("deleting orders") 
+
+            else:
+                print("Invalid Option")
+                          
+    else:
+        print('''
+                            INVALID OPTION | Select Option from 0-3
+                            ''')
+        print(" ")
+        print('*************************THANK YOU***************************')
+                    
+#Main menu function
